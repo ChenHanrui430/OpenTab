@@ -6,9 +6,6 @@ checkpoint and the processed closed-world test splits of TMWF and MTWF. The
 checkpoint was trained with the joint label space and evaluates both datasets
 against the same 116-candidate semantic bank.
 
-The artifact intentionally does **not** contain training code, optimizer or
-scheduler states, training/validation data, raw captures, open-world data,
-ablation code, or implementations/checkpoints of comparison methods.
 
 > Upon acceptance, we will release the complete source code and all datasets
 > used in the paper.
@@ -38,8 +35,6 @@ traffic-side parameters. The frozen text encoder is downloaded separately.
 
 - Linux with Python 3.11 or 3.12.
 - [`uv`](https://docs.astral.sh/uv/) for dependency and environment management.
-- Git LFS when cloning the artifact, because the checkpoint and Arrow files
-  exceed GitHub's normal per-file limit.
 - A CUDA GPU is strongly recommended. We recommend at least 16 GB of GPU
   memory for preparing Qwen embeddings and at least 12 GB for inference with
   the default batch size. CPU execution is supported but slow.
@@ -48,31 +43,14 @@ No virtual environment is included in this repository. `uv` creates and
 manages one locally.
 
 ## 1. Clone and create the environment
-
-Install Git LFS before cloning, then fetch the large files:
-
-```bash
-git lfs install
-git clone <ANONYMOUS_REPOSITORY_URL>
-cd <ANONYMOUS_REPOSITORY_DIRECTORY>
-git lfs pull
-```
-
 Install the locked dependencies:
 
 ```bash
 uv sync --frozen
 ```
 
-Verify the downloaded checkpoint and test files:
-
-```bash
-sha256sum --check CHECKSUMS.sha256
-```
-
 If `uv` is not installed, follow its official installation instructions and
-rerun the command above. Do not install this project with `pip`; the lockfile
-is the tested environment specification.
+rerun the command above. Do not install this project with `pip`.
 
 ## 2. Download the public embedding model
 
@@ -164,12 +142,7 @@ If CUDA runs out of memory, use `--batch-size 1`. If the candidate bank is
 missing, rerun Step 3. If the large files are only small text pointers, run
 `git lfs pull` and verify their sizes with `ls -lh checkpoints data`.
 
-## Data and release scope
-
-The Arrow files contain already processed `data` and `time` traffic features,
-multi-label ground truth, and label text. They do not include train/validation
-splits or raw packet captures. See [`data/README.md`](data/README.md) for the
-exact release scope and dataset-terms notice.
+## Release scope
 
 The source code is licensed under Apache-2.0. The checkpoint is supplied for
 non-commercial academic artifact evaluation during anonymous review. The code
