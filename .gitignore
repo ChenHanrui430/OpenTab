@@ -1,0 +1,9 @@
+.venv/
+models/
+embeddings/*.json
+embeddings/*.safetensors
+results/
+__pycache__/
+*.py[cod]
+.DS_Store
+

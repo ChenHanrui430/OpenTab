@@ -1,0 +1,25 @@
+{
+  "checkpoint": "checkpoints/model.safetensors",
+  "embedding_manifest": "embeddings/candidate_embeddings.json",
+  "embedding_weights": "embeddings/candidate_embeddings.safetensors",
+  "embedding_model": "Qwen/Qwen3-Embedding-4B",
+  "threshold": 0.75,
+  "trace_length": 25600,
+  "datasets": {
+    "tmwf": "data/tmwf_closed_world_test.arrow",
+    "mtwf": "data/mtwf_closed_world_test.arrow"
+  },
+  "architecture": {
+    "traffic_hidden_dim": 640,
+    "traffic_heads": 10,
+    "traffic_layers": 8,
+    "traffic_mlp_ratio": 4.0,
+    "traffic_dropout": 0.1,
+    "num_queries": 16,
+    "stem_channels": 160,
+    "text_dim": 2560,
+    "logit_scale_init": 2.659,
+    "logit_bias_init": -3.0
+  }
+}
+
