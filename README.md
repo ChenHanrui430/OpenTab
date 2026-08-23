@@ -1,4 +1,4 @@
-# Anonymous Closed-World Inference Artifact
+# Anonymous Inference Artifact
 
 This anonymous repository provides the inference-only artifact for our
 multi-tab website fingerprinting method. It contains one traffic-side
