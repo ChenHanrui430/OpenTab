@@ -1,6 +1,6 @@
-# Anonymous Inference Artifact
+# Opentab
 
-This anonymous repository provides the inference-only artifact for our
+This repository provides the inference-only artifact for our
 multi-tab website fingerprinting method. It contains one traffic-side
 checkpoint and the processed closed-world test splits of TMWF and MTWF. The
 checkpoint was trained with the joint label space and evaluates both datasets
@@ -113,16 +113,6 @@ Metrics are written to `results/tmwf_metrics.json` and
 `results/mtwf_metrics.json`. Add `--save-predictions` to also write one JSONL
 record per trace. Results and generated embeddings are excluded from version
 control.
-
-The default protocol predicts an unknown number of tabs using the fixed
-global probability threshold `0.75` in `config.json`; it does not use the
-ground-truth number of tabs at inference time. For the full 116-candidate bank,
-the reference checkpoint gives approximately the following overall results:
-
-| Test split | Exact-set accuracy | Micro F1 |
-| --- | ---: | ---: |
-| TMWF closed world | 0.686 | 0.901 |
-| MTWF closed world | 0.460 | 0.836 |
 
 Minor numerical differences can occur across CUDA, PyTorch, and attention
 kernel versions.
