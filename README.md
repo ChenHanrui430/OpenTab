@@ -135,5 +135,5 @@ missing, rerun Step 3. If the large files are only small text pointers, run
 ## Release scope
 
 The source code is licensed under Apache-2.0. The checkpoint is supplied for
-non-commercial academic artifact evaluation during anonymous review. The code
+non-commercial academic artifact evaluation during review. The code
 license does not override the terms of the original TMWF or MTWF datasets.
